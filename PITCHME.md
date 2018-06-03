@@ -35,11 +35,17 @@ user@hostname:~$
 ## PS1の特殊文字
 
  \d   日付
+
  \h   ホスト名(\Hもあり)
+
  \@   時間(\t, \Tとかもある)
+
  \u   ユーザー名
+
  \w   現在のディレクトリ
+
  \W   `\w`の`basename`
+
  \$   `root`なら`#`、違うなら`$`
 
 ---
@@ -60,7 +66,9 @@ export PS1="\@ \W \$ "
 
 ![colors](colors.png)
 
-色をつけたいところを`\[\e[<色コード>\]`と`\[\033[00m\]`で挟む感じ
+色をつけたいところを
+
+`\[\e[<色コード>\]`と`\[\033[00m\]`で挟む感じ
 
 ---
 
@@ -84,7 +92,7 @@ export PS1="\[\e[01;33m\]\@\[\033[00m\] \[\e[01;34m\]\w\[\033[00m\] \$ "
 ## `PROMPT_COMMAND`
 
 ```bash
-export PROMPT_COMMAND="__prompt_command`
+export PROMPT_COMMAND="__prompt_command"
 __prompt_command() {
   # ここでPS1を変える
 }
@@ -95,7 +103,7 @@ __prompt_command() {
 ## 終了コードで猫の機嫌を変える
 
 ```bash
-export PROMPT_COMMAND="__prompt_command`
+export PROMPT_COMMAND="__prompt_command"
 __prompt_command() {
   EXIT="$?"
 
@@ -145,7 +153,7 @@ function __prompt_git_arrows()
 ---
 
 ```bash
-export PROMPT_COMMAND="__prompt_command`
+export PROMPT_COMMAND="__prompt_command"
 __prompt_command() {
   EXIT="$?"
 
